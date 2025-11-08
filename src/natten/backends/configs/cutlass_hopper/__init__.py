@@ -98,6 +98,8 @@ HOPPER_FORWARD_CONFIGS = {
                 (((4, 4, 8), (4, 4, 8)), KernelSchedule.WarpSpecializedPingpong),
                 (((2, 8, 8), (2, 8, 8)), KernelSchedule.WarpSpecializedCooperative),
                 (((2, 8, 8), (2, 8, 8)), KernelSchedule.WarpSpecializedPingpong),
+                (((1, 16, 8), (2, 8, 8)), KernelSchedule.WarpSpecializedCooperative),
+                (((1, 16, 8), (2, 8, 8)), KernelSchedule.WarpSpecializedPingpong),
             ],
             256: [
                 (((4, 4, 8), (4, 4, 4)), KernelSchedule.WarpSpecializedCooperative),

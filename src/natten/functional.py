@@ -333,6 +333,7 @@ def neighborhood_attention_generic(
     run_persistent_kernel: bool = True,
     kernel_schedule: Optional[Union[str, KernelSchedule]] = None,
     torch_compile: bool = False,
+    skip_token_permute: bool = False,
 ) -> Tensor:
 
     na_tensor_checks(query, key, value)
@@ -424,6 +425,7 @@ def neighborhood_attention_generic(
             backward_kv_tile_shape=backward_kv_tile_shape,
             kernel_schedule=kernel_schedule,
             return_lse=has_additional_attention,
+            skip_token_permute=skip_token_permute,
         )
 
     elif backend == "cutlass-fna":
@@ -877,6 +879,7 @@ def na3d(
     run_persistent_kernel: bool = True,
     kernel_schedule: Optional[Union[str, KernelSchedule]] = None,
     torch_compile: bool = False,
+    skip_token_permute: bool = False,
 ) -> Tensor:
     """Computes 3-D neighborhood attention.
 
@@ -1039,4 +1042,5 @@ def na3d(
         run_persistent_kernel=run_persistent_kernel,
         kernel_schedule=kernel_schedule,
         torch_compile=torch_compile,
+        skip_token_permute=skip_token_permute,
     )

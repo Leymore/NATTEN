@@ -688,6 +688,8 @@ def generate_hopper_fna_kernels(path, num_splits=2):
                     ((4, 4, 8), (4, 4, 8), KernelType.WSPingpong),
                     ((2, 8, 8), (2, 8, 8), KernelType.WSCooperative),
                     ((2, 8, 8), (2, 8, 8), KernelType.WSPingpong),
+                    ((1, 16, 8), (2, 8, 8), KernelType.WSCooperative),
+                    ((1, 16, 8), (2, 8, 8), KernelType.WSPingpong),
                 ],
                 256: [
                     ((4, 4, 8), (4, 4, 4), KernelType.WSCooperative),
